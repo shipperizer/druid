@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+build:
+  artifacts:
+  - image: ghcr.io/shipperizer/druid
+    custom:
+      buildCommand: DOCKERFILE=distribution/docker/Dockerfile ./buildx.sh
+      dependencies:
+        dockerfile:
+          path: distribution/docker/Dockerfile
+  local:
+    push: true
