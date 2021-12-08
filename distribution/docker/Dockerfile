@@ -44,9 +44,7 @@ RUN VERSION=$(mvn -B -q org.apache.maven.plugins:maven-help-plugin:3.2.0:evaluat
  && tar -zxf ./distribution/target/apache-druid-${VERSION}-bin.tar.gz -C /opt \
  && mv /opt/apache-druid-${VERSION} /opt/druid
 
-ARG BUSYBOX_IMAGE=${$BUILDPLATFORM%linux/}
-
-FROM --platform=$BUILDPLATFORM ${$BUSYBOX_IMAGE/arm64/arm64v8}/busybox:1.30.0-glibc as busybox
+FROM --platform=$BUILDPLATFORM busybox:1.30.0-glibc as busybox
 
 FROM gcr.io/distroless/java:$JDK_VERSION
 LABEL maintainer="Apache Druid Developers <dev@druid.apache.org>"

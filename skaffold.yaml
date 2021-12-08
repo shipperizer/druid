@@ -8,8 +8,8 @@ build:
       dependencies:
         dockerfile:
           path: distribution/docker/Dockerfile
-  # - image: ghcr.io/shipperizer/druid-arm64
-  #   docker:
-  #     dockerfile: distribution/docker/Dockerfile.arm64
+  - image: ghcr.io/shipperizer/druid
+    docker:
+      dockerfile: distribution/docker/Dockerfile.arm64
   local:
     push: true

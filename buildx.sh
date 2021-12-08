@@ -9,7 +9,7 @@
 #  (2) update the corresponding node-affinities in k8s/pod.yaml.
 
 # The platforms to build.
-platforms="linux/amd64,linux/arm64"
+platforms="linux/amd64" #,linux/arm64"
 
 dockerfile=$DOCKERFILE
 
