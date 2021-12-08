@@ -160,4 +160,5 @@ then
     mkdir -p ${DRUID_DIRS_TO_CREATE}
 fi
 
+exec java ${JAVA_OPTS} -cp $COMMON_CONF_DIR:$SERVICE_CONF_DIR:lib/*: org.apache.druid.cli.Main tools pull-deps -c "org.apache.druid.extensions:druid–kubernetes-extensions" -c "org.apache.druid.extensions:prometheus-emitter"
 exec java ${JAVA_OPTS} -cp $COMMON_CONF_DIR:$SERVICE_CONF_DIR:lib/*: org.apache.druid.cli.Main server $@
